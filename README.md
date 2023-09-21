@@ -15,7 +15,7 @@ This software will:
 
 A pair of connected COM ports is required for this software to work (for example: COM1 port connected to COM2 port). If physical COM ports are not available then a virtual serial port emulator will work too. 
 
-To have a virtual serial port emulator on Windows 10 install [com0com](https://sourceforge.net/projects/com0com/files/latest/download). This will create the required a connected virtual COM port pair by default.
+To have a virtual serial port emulator on Windows 10 install [com0com](https://sourceforge.net/projects/com0com/). This will create a connected virtual COM port pair by default.
 
 ## Install and run
 
