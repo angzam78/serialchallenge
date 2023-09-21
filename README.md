@@ -1,4 +1,4 @@
-### Serial Challenge
+# Serial Challenge
 
 Serial comms demo with threading on Python.
 
