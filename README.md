@@ -6,10 +6,10 @@ Serial comms demo with threading on Python.
 
 This software will:
 - Discover and print to screen all available COM ports
- - gracefully fail (print error message to screen) if not enough COM ports are available
+  - gracefully fail (print error message to screen) if not enough COM ports are available
 - Create two threads; 
- - first thread connects to first COM port and writes serial data to it
- - second thread connects to the other COM port then reads the serial data and prints it to screen
+  - first thread connects to first COM port and writes serial data to it
+  - second thread connects to the other COM port then reads the serial data and prints it to screen
 
 ## Prerequisites
 

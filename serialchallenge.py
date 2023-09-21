@@ -32,12 +32,7 @@ match ports_total :
 # print to screen all available COM ports
 sys.stdout.write("Found {} COM ports {}\n".format(ports_total, next(zip(*ports))))
 
-# hardcoded COM port selection
-# TODO: let user specify which COM ports to use
-port_send = ports[0][0] # first COM port
-port_recv = ports[1][0] # other COM port
-
-# a basic comms handler for raw data
+# a basic raw data comms handler
 class DataHandler(serial.threaded.Protocol):
     def connection_made(self, transport):
         self.transport = transport
@@ -50,19 +45,22 @@ class DataHandler(serial.threaded.Protocol):
         if exc:
             traceback.print_exc(exc)
 
+# hardcoded COM port selection
+# TODO: let user specify which COM ports to use
+port_send = ports[0][0] # first COM port
+port_recv = ports[1][0] # other COM port
+
 # create two threads... 
 # first thread connects to first COM port and writes serial data to it
 # second thread connects to the other COM port; reads the serial data and prints it to screen
-sys.stdout.write("Starting I/O threads\n")
+sys.stdout.write("Setting up I/O handling threads\n")
+
 write_thread = serial.threaded.ReaderThread(serial.serial_for_url(port_send), DataHandler)
-read_thread = serial.threaded.ReaderThread(serial.serial_for_url(port_recv), DataHandler)
-
-# start threads
 write_thread.start()
-read_thread.start()
-
-# wait for connections to be established
 write_thread.connect()
+
+read_thread = serial.threaded.ReaderThread(serial.serial_for_url(port_recv), DataHandler)
+read_thread.start()
 read_thread.connect()
 
 # user instructions
@@ -86,6 +84,7 @@ try:
     while True:
         write_thread.write(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits).encode('ascii'))
 
+# wait for user to stop program
 except KeyboardInterrupt:
     sys.stdout.write('\nLoop interrupted, stopping I/O threads...\n')
 
