@@ -15,7 +15,7 @@ This software will:
 
 A pair of connected COM ports is required for this software to work (for example: COM1 port connected to COM2 port). If physical COM ports are not available then a virtual serial port emulator will work too. 
 
-For virtual serial port emulator on Windows 10 install [com0com](https://sourceforge.net/projects/com0com/files/latest/download). This will create the required connected virtual COM port pair by default.
+To have a virtual serial port emulator on Windows 10 install [com0com](https://sourceforge.net/projects/com0com/files/latest/download). This will create the required a connected virtual COM port pair by default.
 
 ## Install and run
 
@@ -31,7 +31,7 @@ C:\MyWorkspace\serialchallenge> python3 serialchallenge.py
 C:\MyWorkspace\serialchallenge> python3 serialchallenge.py
 Starting serialchallenge (angzam78)...
 Found 2 COM ports ('COM4', 'COM8')
-Starting I/O threads
+Setting up I/O handling threads
 Data will be sent on COM4 and received on COM8
 Press CTRL+C to interrupt loop...
 Starting in 9 8 7 6 5 4 3 2 1 0 PUGeDvGc61SWjgjEbjl33uAvxeO3LZPRPmCyJ75Z3fPHnNcwb5sSdDp0vfyUuG3wAqEVgk0sCtUfX0jyOIC6BIi8MIMq3mJxWx0yxdWqFCOcnMitB9eOKo2jQfDdlZNR2Bd2DcSF6hq1UZU5zHl1tEe5ODrN25GX3TayQLG1E0JPxRPyaz5XJemvy2b80tIsQb1lMEK663WzEjBJV7eKU6tyhG703pzqM1oOv3J1SQW6lRJKqE8obK2zbWJIGVnjXPyy3IDuXJ4L4tUrPioqazG5Ml8uwYKxOqJCQAfrjnhdbUzUeRqxwuy3F14pCM94mDQKlw2QQJfEhg2nzvWn90p2gr35zBOUX9xCwP3l9y1oXYbPzwNLA2smx5zta...
